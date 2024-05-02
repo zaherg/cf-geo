@@ -3,6 +3,7 @@ name = "geo"
 main = "src/index.ts"
 compatibility_date = "2024-04-23"
 compatibility_flags = ["nodejs_compat"]
+minify = true
 
 # Specify a specific and fixed port for the local server
 [dev]
