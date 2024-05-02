@@ -1,18 +1,31 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.toml`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+import { type Context, Hono } from 'hono';
+import { getCountryName } from '@/lib/utils';
 
-export default {
-	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
-	},
-};
+const app = new Hono();
+
+app.get('/', (ctx: Context) => {
+	if (!ctx.req.header('cf-connecting-ip') || !ctx.req.raw.cf)
+		return ctx.json({ message: 'something went wrong' }, 500);
+
+	const {
+		country: code,
+		city,
+		continent,
+		region,
+		regionCode,
+		timezone,
+	} = ctx.req.raw.cf as IncomingRequestCfProperties;
+
+	return ctx.json({
+		country: getCountryName(code),
+		code,
+		city,
+		continent,
+		region,
+		regionCode,
+		timezone,
+		all: ctx.req.raw.cf,
+	});
+});
+
+export default app;

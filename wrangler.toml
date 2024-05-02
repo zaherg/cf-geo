@@ -4,12 +4,16 @@ main = "src/index.ts"
 compatibility_date = "2024-04-23"
 compatibility_flags = ["nodejs_compat"]
 
+# Specify a specific and fixed port for the local server
+[dev]
+port = 54232
+
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure
 # rather than the end user may result in better performance.
 # Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
-# [placement]
-# mode = "smart"
+[placement]
+mode = "smart"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Docs:
