@@ -1,7 +1,21 @@
 import { type Context, Hono } from 'hono';
+import { cache } from 'hono/cache';
+import { etag } from 'hono/etag';
+import { poweredBy } from 'hono/powered-by';
+import { secureHeaders } from 'hono/secure-headers';
 import { getCountryName } from '@/lib/utils';
 
 const app = new Hono();
+
+app.use(
+	cache({
+		cacheName: 'geo-app',
+		cacheControl: 'max-age=600',
+	}),
+)
+	.use(etag())
+	.use(poweredBy())
+	.use(secureHeaders());
 
 app.get('/', (ctx: Context) => {
 	if (!ctx.req.header('cf-connecting-ip') || !ctx.req.raw.cf)
