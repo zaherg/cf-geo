@@ -9,6 +9,7 @@ minify = true
 [dev]
 port = 54232
 
+# The CPU limit can be set to a maximum of 30,000 milliseconds (30 seconds).
 [limits]
 cpu_ms = 50
 
