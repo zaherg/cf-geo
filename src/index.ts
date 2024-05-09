@@ -33,6 +33,7 @@ app.get('/', (ctx: Context) => {
 	} = ctx.req.raw.cf as IncomingRequestCfProperties;
 
 	return ctx.json({
+		ip: ctx.req.header('cf-connecting-ip'),
 		country: getCountryName(code),
 		code,
 		city,
