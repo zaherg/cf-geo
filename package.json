@@ -1,7 +1,8 @@
 {
 	"name": "geo",
-	"version": "0.0.0",
-	"private": true,
+	"version": "0.0.2",
+	"private": false,
+	"prettier": "@zaher/prettier-config",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
@@ -12,6 +13,7 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20240423.0",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@zaher/prettier-config": "^1.0.4",
 		"prettier": "^3.2.5",
 		"prettier-plugin-toml": "^2.0.1",
 		"typescript": "^5.0.4",
