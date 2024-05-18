@@ -4,9 +4,11 @@ main = "src/index.ts"
 compatibility_date = "2024-04-23"
 compatibility_flags = ["nodejs_compat"]
 minify = true
-# Change this to match your custom domain
-routes = [{ pattern = "geo.srvr.dev", custom_domain = true }]
 
+# Change this one to your custom domain
+[[routes]]
+pattern = "geo.srvr.dev"
+custom_domain = true
 
 # Specify a specific and fixed port for the local server
 [dev]
@@ -14,7 +16,7 @@ port = 3000
 
 # The CPU limit can be set to a maximum of 30,000 milliseconds (30 seconds).
 [limits]
-cpu_ms = 50
+cpu_ms = 30
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure
