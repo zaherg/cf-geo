@@ -4,6 +4,9 @@ main = "src/index.ts"
 compatibility_date = "2024-04-23"
 compatibility_flags = ["nodejs_compat"]
 minify = true
+# Change this to match your custom domain
+routes = [{ pattern = "geo.srvr.dev", custom_domain = true }]
+
 
 # Specify a specific and fixed port for the local server
 [dev]
@@ -32,6 +35,3 @@ namespace_id = "1001"
 # Cloudflare location
 # Period: the duration of the period, in seconds. Must be either 10 or 60
 simple = { limit = 5, period = 60 }
-
-# Change this to match your custom domain
-routes = [{ pattern = "geo.srvr.dev", custom_domain = true }]
