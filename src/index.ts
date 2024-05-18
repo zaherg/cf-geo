@@ -3,10 +3,11 @@ import { cache } from 'hono/cache';
 import { etag } from 'hono/etag';
 import { poweredBy } from 'hono/powered-by';
 import { secureHeaders } from 'hono/secure-headers';
+import type { Bindings } from '@/bindings';
 import { ratelimit } from '@/lib/middlewares/ratelimit';
 import { getCountryName } from '@/lib/utils';
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.use(ratelimit())
 	.use(
