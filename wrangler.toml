@@ -4,7 +4,8 @@ main = "src/index.ts"
 compatibility_date = "2024-04-23"
 compatibility_flags = ["nodejs_compat"]
 minify = true
-logpush = true
+
+tail_consumers = [{ service = "geo-tail" }]
 
 # Change this one to your custom domain
 [[routes]]
