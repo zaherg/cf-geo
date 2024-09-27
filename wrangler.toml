@@ -1,11 +1,15 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "geo"
 main = "src/index.ts"
-compatibility_date = "2024-04-23"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2024-09-23"
 minify = true
 
 tail_consumers = [{ service = "geo-tail" }]
+
+# wrangler.toml (wrangler v3.78.6^)
+[observability]
+enabled = true
 
 # Change this one to your custom domain
 [[routes]]
