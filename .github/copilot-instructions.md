@@ -16,7 +16,7 @@ This is a TypeScript-based Cloudflare Workers repository built with Hono.js fram
 -   Local development: `npm run dev`
 -   Build for production: `npm run build`
 -   Deploy to Cloudflare: `npm run deploy`
--   Full check: `npm run check` (includes type-check, format, lint, and build)
+-   Fix style: `npm run style:fix`
 
 ## Repository Structure
 
