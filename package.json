@@ -10,7 +10,6 @@
 		"style:fix": "prettier . --write",
 		"typegen": "wrangler types",
 		"check": "tsc --noEmit",
-		"format": "prettier . --write",
 		"build": "wrangler deploy --dry-run --outdir=dist",
 		"test": "vitest run"
 	},
