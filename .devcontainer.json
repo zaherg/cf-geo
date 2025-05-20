@@ -56,7 +56,7 @@
             "onAutoForward": "notify"
         }
     },
-    "postCreateCommand": "npm install -g wrangler @cloudflare/workers-types && npm install",
+    "postCreateCommand": "npm install",
     "remoteUser": "node",
     "mounts": [
         "source=cf-geo-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
