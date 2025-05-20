@@ -6,6 +6,7 @@ import { secureHeaders } from 'hono/secure-headers';
 import type { Bindings } from '@/bindings';
 import { ratelimit } from '@/lib/middlewares/ratelimit';
 import { getCountryName } from '@/lib/utils';
+import type { IncomingRequestCfProperties } from '@cloudflare/workers-types';
 
 const app = new Hono<{ Bindings: Bindings }>();
 
@@ -25,7 +26,7 @@ app.get('/', (ctx: Context) => {
 		return ctx.json({ message: 'something went wrong' }, 500);
 
 	const {
-		country: code,
+		country: code = '',
 		city,
 		continent,
 		region,
