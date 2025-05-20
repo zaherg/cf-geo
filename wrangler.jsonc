@@ -1,0 +1,35 @@
+{
+	"name": "geo",
+	"main": "src/index.ts",
+	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_date": "2025-05-20",
+	"minify": true,
+	"routes": [
+		{
+			"pattern": "geo.srvr.dev",
+			"custom_domain": true,
+		},
+	],
+	"dev": {
+		"port": 3000,
+	},
+	"limits": {
+		"cpu_ms": 30,
+	},
+	"placement": {
+		"mode": "smart",
+	},
+	"unsafe": {
+		"bindings": [
+			{
+				"name": "RATE_LIMITER",
+				"type": "ratelimit",
+				"namespace_id": "1001",
+				"simple": {
+					"limit": 5,
+					"period": 60,
+				},
+			},
+		],
+	},
+}
