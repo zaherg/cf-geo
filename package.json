@@ -15,11 +15,11 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.8.31",
-		"@trivago/prettier-plugin-sort-imports": "^4.4.0",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@zaher/prettier-config": "^1.0.4",
-		"prettier": "^3.4.0",
-		"prettier-plugin-toml": "^2.0.2",
-		"typescript": "^5.7.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-toml": "^2.0.1",
+		"typescript": "^5.3.3",
 		"vitest": "^3.1.4",
 		"wrangler": "^4.16.0"
 	},

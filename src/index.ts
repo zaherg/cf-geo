@@ -25,7 +25,7 @@ app.get('/', (ctx: Context) => {
 		return ctx.json({ message: 'something went wrong' }, 500);
 
 	const {
-		country: code = "",
+		country: code = '',
 		city,
 		continent,
 		region,
